@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+>
+
+<title>Ganesh Chaturthi Banner</title>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    background:#fff;
+}
+
+
+/* ================= SECTION ================= */
+
+.ganesh-section{
+    width:100%;
+    height:170px;
+    position:relative;
+    overflow:hidden;
+    background:#f8dda0;
+}
+
+
+/* ================= THREAD ================= */
+
+.string{
+    position:absolute;
+    top:0;
+    width:30%;
+    height:78px;
+    z-index:3;
+    pointer-events:none;
+}
+
+.left-string{
+    left:0;
+}
+
+.right-string{
+    right:0;
+}
+
+.wire{
+    position:absolute;
+    top:-38px;
+    width:124%;
+    height:70px;
+    border-bottom:2px solid #c47d57;
+}
+
+.left-string .wire{
+    left:-22px;
+    border-radius:0 0 78% 58%;
+    transform:rotate(-3deg);
+}
+
+.right-string .wire{
+    right:-22px;
+    border-radius:0 0 58% 78%;
+    transform:rotate(3deg);
+}
+
+
+/* ================= HANGINGS ================= */
+
+.hanging{
+    position:absolute;
+    width:22px;
+    height:42px;
+    transform-origin:top center;
+}
+
+.hanging::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:-5px;
+    width:1.4px;
+    height:13px;
+    transform:translateX(-50%);
+    background:#b87952;
+    border-radius:5px;
+}
+
+
+/* ================= LEAF ================= */
+
+.leaf{
+    position:absolute;
+    left:50%;
+    top:6px;
+    width:15px;
+    height:29px;
+
+    transform:
+        translateX(-50%)
+        rotate(3deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            #5f873f,
+            #7fa657 50%,
+            #99b96f
+        );
+
+    clip-path:polygon(
+        50% 0%,
+        68% 9%,
+        82% 22%,
+        94% 40%,
+        100% 55%,
+        91% 70%,
+        75% 84%,
+        50% 100%,
+        25% 84%,
+        9% 70%,
+        0% 55%,
+        6% 40%,
+        18% 22%,
+        32% 9%
+    );
+}
+
+.leaf::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:3px;
+    width:1px;
+    height:23px;
+    transform:translateX(-50%);
+    background:rgba(55,83,36,.55);
+}
+
+.leaf2{
+    width:14px;
+    height:27px;
+
+    transform:
+        translateX(-50%)
+        rotate(-8deg);
+}
+
+
+/* ================= MANGO ================= */
+
+.mango{
+    position:absolute;
+    left:50%;
+    top:7px;
+    width:14px;
+    height:20px;
+
+    transform:
+        translateX(-50%)
+        rotate(-10deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7c04e,
+            #ee9932 58%,
+            #df7e28
+        );
+
+    border-radius:58% 42% 64% 48%;
+}
+
+.mango::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:-5px;
+    width:2px;
+    height:6px;
+    background:#617c42;
+}
+
+
+/* ================= APPLE ================= */
+
+.apple{
+    position:absolute;
+    left:50%;
+    top:9px;
+    width:15px;
+    height:15px;
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #f4a18b,
+            #de6855 50%,
+            #c64b45
+        );
+
+    border-radius:48% 48% 54% 54%;
+}
+
+.apple::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:-5px;
+    width:2px;
+    height:6px;
+    background:#607b40;
+}
+
+.apple::after{
+    content:"";
+    position:absolute;
+    left:8px;
+    top:-4px;
+    width:7px;
+    height:4px;
+    background:#759653;
+    border-radius:100% 0 100% 0;
+    transform:rotate(-25deg);
+}
+
+
+/* ================= BERRY ================= */
+
+.berry{
+    position:absolute;
+    left:50%;
+    top:9px;
+    width:12px;
+    height:15px;
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #dc6a88,
+            #ba426b,
+            #9e3158
+        );
+
+    border-radius:50% 50% 58% 58%;
+}
+
+
+/* ================= GRAPES ================= */
+
+.cluster{
+    position:absolute;
+    left:50%;
+    top:7px;
+    width:18px;
+    height:23px;
+    transform:translateX(-50%);
+}
+
+.cluster span{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ad4e79;
+}
+
+.cluster span:nth-child(1){
+    left:5px;
+    top:0;
+}
+
+.cluster span:nth-child(2){
+    left:1px;
+    top:5px;
+}
+
+.cluster span:nth-child(3){
+    left:9px;
+    top:5px;
+}
+
+.cluster span:nth-child(4){
+    left:4px;
+    top:10px;
+}
+
+.cluster span:nth-child(5){
+    left:8px;
+    top:14px;
+}
+
+
+/* ================= LEFT POSITIONS ================= */
+
+.left-string .h1{
+    left:6%;
+    top:10px;
+    transform:rotate(-10deg);
+}
+
+.left-string .h2{
+    left:23%;
+    top:17px;
+    transform:rotate(-7deg);
+}
+
+.left-string .h3{
+    left:41%;
+    top:23px;
+    transform:rotate(-4deg);
+}
+
+.left-string .h4{
+    left:59%;
+    top:25px;
+    transform:rotate(2deg);
+}
+
+.left-string .h5{
+    left:77%;
+    top:20px;
+    transform:rotate(5deg);
+}
+
+.left-string .h6{
+    left:90%;
+    top:12px;
+    transform:rotate(8deg);
+}
+
+
+/* ================= RIGHT POSITIONS ================= */
+
+.right-string .h1{
+    right:6%;
+    top:10px;
+    transform:rotate(10deg);
+}
+
+.right-string .h2{
+    right:23%;
+    top:17px;
+    transform:rotate(7deg);
+}
+
+.right-string .h3{
+    right:41%;
+    top:23px;
+    transform:rotate(4deg);
+}
+
+.right-string .h4{
+    right:59%;
+    top:25px;
+    transform:rotate(-2deg);
+}
+
+.right-string .h5{
+    right:77%;
+    top:20px;
+    transform:rotate(-5deg);
+}
+
+.right-string .h6{
+    right:90%;
+    top:12px;
+    transform:rotate(-8deg);
+}
+
+
+/* ================= CELEBRATE ================= */
+
+.celebrate{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:"Poppins",sans-serif;
+    font-size:clamp(11px,1.4vw,16px);
+    font-weight:500;
+    line-height:1;
+    color:#cf2e69;
+    white-space:nowrap;
+    z-index:7;
+}
+
+
+/* ================= TITLE ================= */
+
+.title{
+    position:absolute;
+    top:33px;
+    left:50%;
+    transform:translateX(-50%);
+    width:94%;
+    text-align:center;
+    white-space:nowrap;
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(27px,5vw,54px);
+    font-weight:400;
+    line-height:1;
+    color:#d72d68;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.85),
+        0 2px 2px rgba(160,70,80,.12);
+
+    z-index:7;
+}
+
+
+/* ================= DATE ================= */
+
+.date{
+    position:absolute;
+    top:83px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:"Poppins",sans-serif;
+    font-size:clamp(14px,1.8vw,20px);
+    font-weight:600;
+    line-height:1;
+    letter-spacing:.6px;
+    color:#b85e48;
+    white-space:nowrap;
+    z-index:8;
+}
+
+
+/* ================= SIMPLE BG DEEPAMS ================= */
+
+.bg-deepam{
+    position:absolute;
+    bottom:22px;
+    width:40px;
+    height:15px;
+    background:rgba(178,104,58,.08);
+    border-radius:50% 50% 55% 55%;
+    z-index:1;
+    pointer-events:none;
+}
+
+.bg-deepam::before{
+    content:"";
+    position:absolute;
+    left:5px;
+    top:3px;
+    width:30px;
+    height:12px;
+    background:rgba(174,96,54,.10);
+    border-radius:5px 5px 18px 18px;
+}
+
+.bg-deepam::after{
+    content:"";
+    position:absolute;
+    left:16px;
+    top:-17px;
+    width:8px;
+    height:18px;
+    background:rgba(205,118,52,.10);
+    border-radius:70% 30% 65% 35%;
+    transform:rotate(7deg);
+}
+
+
+/* LEFT SIDE BG DEEPAM */
+
+.bg-deepam-left{
+    left:27%;
+    transform:rotate(-5deg);
+}
+
+
+/* RIGHT SIDE BG DEEPAM */
+
+.bg-deepam-right{
+    right:27%;
+    transform:rotate(5deg);
+}
+
+
+/* ================= VINAYAKA ================= */
+
+.vinayaka-img{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:75px;
+    height:auto;
+    object-fit:contain;
+    z-index:6;
+    pointer-events:none;
+    user-select:none;
+}
+
+
+/* ================= BOTTOM WAVE ================= */
+
+.bottom-wave{
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width:100%;
+    height:58px;
+    display:block;
+    z-index:2;
+}
+
+
+/* ================= DOTS ================= */
+
+.dot{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#efc55f;
+    z-index:3;
+}
+
+.dot1{
+    left:7%;
+    bottom:14px;
+}
+
+.dot2{
+    left:11%;
+    bottom:12px;
+}
+
+.dot3{
+    left:15%;
+    bottom:9px;
+}
+
+.dot4{
+    right:7%;
+    bottom:14px;
+}
+
+.dot5{
+    right:11%;
+    bottom:12px;
+}
+
+.dot6{
+    right:15%;
+    bottom:9px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .ganesh-section{
+        height:150px;
+    }
+
+    .string{
+        width:32%;
+        height:66px;
+    }
+
+    .wire{
+        top:-32px;
+        height:58px;
+        border-bottom-width:1.5px;
+    }
+
+
+    .left-string .h1{
+        top:9px;
+        transform:scale(.78) rotate(-10deg);
+    }
+
+    .left-string .h2{
+        top:14px;
+        transform:scale(.78) rotate(-7deg);
+    }
+
+    .left-string .h3{
+        top:19px;
+        transform:scale(.78) rotate(-4deg);
+    }
+
+    .left-string .h4{
+        top:21px;
+        transform:scale(.78) rotate(2deg);
+    }
+
+    .left-string .h5{
+        top:17px;
+        transform:scale(.78) rotate(5deg);
+    }
+
+    .left-string .h6{
+        top:10px;
+        transform:scale(.78) rotate(8deg);
+    }
+
+
+    .right-string .h1{
+        top:9px;
+        transform:scale(.78) rotate(10deg);
+    }
+
+    .right-string .h2{
+        top:14px;
+        transform:scale(.78) rotate(7deg);
+    }
+
+    .right-string .h3{
+        top:19px;
+        transform:scale(.78) rotate(4deg);
+    }
+
+    .right-string .h4{
+        top:21px;
+        transform:scale(.78) rotate(-2deg);
+    }
+
+    .right-string .h5{
+        top:17px;
+        transform:scale(.78) rotate(-5deg);
+    }
+
+    .right-string .h6{
+        top:10px;
+        transform:scale(.78) rotate(-8deg);
+    }
+
+
+    /* CENTER TEXT */
+
+    .celebrate{
+        top:15px;
+        font-size:10px;
+    }
+
+    .title{
+        top:39px;
+        width:92%;
+        font-size:clamp(23px,8vw,36px);
+    }
+
+    .date{
+        top:76px;
+        font-size:13px;
+        letter-spacing:.3px;
+    }
+
+
+    /* LIGHT BG DEEPAMS */
+
+    .bg-deepam{
+        bottom:18px;
+        width:31px;
+        height:12px;
+        opacity:.7;
+    }
+
+    .bg-deepam::before{
+        left:4px;
+        top:3px;
+        width:23px;
+        height:9px;
+    }
+
+    .bg-deepam::after{
+        left:12px;
+        top:-13px;
+        width:7px;
+        height:14px;
+    }
+
+    .bg-deepam-left{
+        left:16%;
+    }
+
+    .bg-deepam-right{
+        right:16%;
+    }
+
+
+    /* VINAYAKA */
+
+    .vinayaka-img{
+        width:65px;
+        bottom:0;
+    }
+
+
+    /* WAVE */
+
+    .bottom-wave{
+        height:46px;
+    }
+
+
+    /* DOTS */
+
+    .dot{
+        width:6px;
+        height:6px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .celebrate{
+        top:14px;
+        font-size:9px;
+    }
+
+    .title{
+        top:38px;
+        width:90%;
+        font-size:26px;
+    }
+
+    .date{
+        top:73px;
+        font-size:12px;
+    }
+
+    .vinayaka-img{
+        width:60px;
+    }
+
+    .bg-deepam-left{
+        left:13%;
+    }
+
+    .bg-deepam-right{
+        right:13%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<section class="ganesh-section">
+
+
+    <!-- LEFT DECORATION -->
+
+    <div class="string left-string">
+
+        <div class="wire"></div>
+
+        <div class="hanging h1">
+            <span class="leaf"></span>
+        </div>
+
+        <div class="hanging h2">
+            <span class="mango"></span>
+        </div>
+
+        <div class="hanging h3">
+            <span class="leaf leaf2"></span>
+        </div>
+
+        <div class="hanging h4">
+            <span class="apple"></span>
+        </div>
+
+        <div class="hanging h5">
+            <span class="berry"></span>
+        </div>
+
+        <div class="hanging h6">
+            <span class="cluster">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT DECORATION -->
+
+    <div class="string right-string">
+
+        <div class="wire"></div>
+
+        <div class="hanging h1">
+            <span class="leaf"></span>
+        </div>
+
+        <div class="hanging h2">
+            <span class="mango"></span>
+        </div>
+
+        <div class="hanging h3">
+            <span class="leaf leaf2"></span>
+        </div>
+
+        <div class="hanging h4">
+            <span class="apple"></span>
+        </div>
+
+        <div class="hanging h5">
+            <span class="berry"></span>
+        </div>
+
+        <div class="hanging h6">
+            <span class="cluster">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- CENTER TEXT -->
+
+    <div class="celebrate">
+        Celebrate
+    </div>
+
+    <div class="title">
+        Ganesh Chaturthi
+    </div>
+
+    <div class="date">
+        14th September
+    </div>
+
+
+    <!-- BACKGROUND DEEPAM LEFT -->
+
+    <div class="bg-deepam bg-deepam-left"></div>
+
+
+    <!-- BACKGROUND DEEPAM RIGHT -->
+
+    <div class="bg-deepam bg-deepam-right"></div>
+
+
+    <!-- VINAYAKA -->
+
+    <img
+        src="vinayaka.png"
+        class="vinayaka-img"
+        alt="Vinayaka"
+    >
+
+
+    <!-- BOTTOM CURVE -->
+
+    <svg
+        class="bottom-wave"
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <path
+            d="
+            M0,18
+            C70,55 135,67 220,65
+            C310,63 380,79 470,88
+            C610,103 830,103 970,88
+            C1060,79 1130,63 1220,65
+            C1305,67 1370,55 1440,18
+            L1440,120
+            L0,120
+            Z
+            "
+            fill="#ffffff"
+        />
+
+    </svg>
+
+
+    <!-- DOTS -->
+
+    <span class="dot dot1"></span>
+    <span class="dot dot2"></span>
+    <span class="dot dot3"></span>
+
+    <span class="dot dot4"></span>
+    <span class="dot dot5"></span>
+    <span class="dot dot6"></span>
+
+
+</section>
+
+
+</body>
+</html>
