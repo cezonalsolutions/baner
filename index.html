@@ -40,9 +40,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    FIXED TOP
-================================ */
+========================================= */
 
 .top-fixed{
     position:fixed;
@@ -58,11 +58,10 @@ body{
     background:#ffffff;
 
     border-bottom:1px solid #d8d8dc;
-    box-shadow:none;
 }
 
 
-/* 35PX TOP SAFE AREA */
+/* 35PX SAFE AREA */
 
 .safe-area{
     width:100%;
@@ -71,9 +70,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    HEADER
-================================ */
+========================================= */
 
 .header{
     width:100%;
@@ -128,9 +127,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    PAGE
-================================ */
+========================================= */
 
 .page{
     width:100%;
@@ -145,9 +144,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    USER
-================================ */
+========================================= */
 
 .user{
     width:100%;
@@ -175,6 +174,7 @@ body{
 
     background:#f0eaff;
 }
+
 
 .avatar svg{
     width:37px;
@@ -209,20 +209,17 @@ body{
     font-weight:500;
 
     color:#5d5f65;
-
-    letter-spacing:-0.1px;
 }
 
 
-/* ===============================
-   TOP ACTIONS
-================================ */
+/* =========================================
+   TOP 3 ACTION CARDS
+========================================= */
 
 .actions{
     width:100%;
 
     display:grid;
-
     grid-template-columns:repeat(3,minmax(0,1fr));
 
     gap:10px;
@@ -233,7 +230,7 @@ body{
 
 .action{
     width:100%;
-    height:112px;
+    height:106px;
 
     min-width:0;
 
@@ -243,41 +240,49 @@ body{
     align-items:center;
     justify-content:center;
 
-    gap:12px;
+    gap:10px;
 
-    padding:10px 5px;
+    padding:12px 6px;
 
     background:#ffffff;
 
-    border:1px solid #e3e3e5;
-    border-radius:15px;
+    border:1px solid #dedee2;
+
+    /* BETTER CARD SHAPE */
+    border-radius:18px;
 }
 
 
 .action svg{
-    width:30px;
-    height:30px;
+    width:29px;
+    height:29px;
 }
 
 
-.action span{
-    font-size:14px;
+.action-text{
+    width:100%;
 
-    line-height:1.25;
+    text-align:center;
+
+    font-size:14px;
+    line-height:18px;
 
     font-weight:600;
 
     letter-spacing:-0.15px;
 
     color:#151517;
-
-    text-align:center;
 }
 
 
-/* ===============================
+.action-text span{
+    display:block;
+}
+
+
+/* =========================================
    SECTIONS
-================================ */
+========================================= */
 
 .section{
     width:100%;
@@ -299,9 +304,9 @@ body{
 }
 
 
-/* ===============================
-   LIST
-================================ */
+/* =========================================
+   LIST CARD
+========================================= */
 
 .list{
     width:100%;
@@ -315,9 +320,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    ROW
-================================ */
+========================================= */
 
 .row{
     width:100%;
@@ -384,9 +389,9 @@ body{
 }
 
 
-/* ===============================
+/* =========================================
    SVG
-================================ */
+========================================= */
 
 svg{
     display:block;
@@ -402,9 +407,9 @@ svg{
 }
 
 
-/* ===============================
+/* =========================================
    LOGOUT
-================================ */
+========================================= */
 
 .logout{
     width:100%;
@@ -419,7 +424,7 @@ svg{
     background:#ffffff;
 
     border:1px solid #dedee0;
-    border-radius:15px;
+    border-radius:16px;
 
     color:#111113;
 
@@ -428,9 +433,9 @@ svg{
 }
 
 
-/* ===============================
+/* =========================================
    VERSION
-================================ */
+========================================= */
 
 .version{
     width:100%;
@@ -446,9 +451,9 @@ svg{
 }
 
 
-/* ===============================
+/* =========================================
    SMALL MOBILE
-================================ */
+========================================= */
 
 @media(max-width:360px){
 
@@ -463,22 +468,24 @@ svg{
     }
 
     .actions{
-        gap:7px;
+        gap:8px;
     }
 
     .action{
-        height:108px;
+        height:103px;
+        border-radius:16px;
     }
 
-    .action span{
+    .action-text{
         font-size:13px;
+        line-height:17px;
     }
 }
 
 
-/* ===============================
+/* =========================================
    TABLET / DESKTOP
-================================ */
+========================================= */
 
 @media(min-width:768px){
 
@@ -500,12 +507,13 @@ svg{
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ===============================
+<!-- =========================================
      FIXED PROFILE HEADER
-================================ -->
+========================================= -->
 
 <div class="top-fixed">
 
@@ -530,9 +538,10 @@ svg{
 </div>
 
 
-<!-- ===============================
+
+<!-- =========================================
      PAGE
-================================ -->
+========================================= -->
 
 <main class="page">
 
@@ -575,14 +584,15 @@ svg{
 </section>
 
 
-<!-- ===============================
-     TOP ACTIONS
-================================ -->
+
+<!-- =========================================
+     TOP 3 ACTIONS
+========================================= -->
 
 <section class="actions">
 
 
-    <!-- ORDERS -->
+    <!-- 1. YOUR ORDERS -->
 
     <div class="action">
 
@@ -600,12 +610,17 @@ svg{
 
         </svg>
 
-        <span>Your Orders</span>
+
+        <div class="action-text">
+            <span>Your</span>
+            <span>Orders</span>
+        </div>
 
     </div>
 
 
-    <!-- HELP -->
+
+    <!-- 2. HELP & SUPPORT -->
 
     <div class="action">
 
@@ -630,12 +645,17 @@ svg{
 
         </svg>
 
-        <span>Help &amp; Support</span>
+
+        <div class="action-text">
+            <span>Help &amp;</span>
+            <span>Support</span>
+        </div>
 
     </div>
 
 
-    <!-- COUPONS -->
+
+    <!-- 3. YOUR COUPONS -->
 
     <div class="action">
 
@@ -658,16 +678,22 @@ svg{
 
         </svg>
 
-        <span>Coupons</span>
+
+        <div class="action-text">
+            <span>Your</span>
+            <span>Coupons</span>
+        </div>
 
     </div>
+
 
 </section>
 
 
-<!-- ===============================
+
+<!-- =========================================
      YOUR INFORMATION
-================================ -->
+========================================= -->
 
 <section class="section">
 
@@ -679,7 +705,7 @@ svg{
     <div class="list">
 
 
-        <!-- SAVED ADDRESS -->
+        <!-- SAVED ADDRESSES -->
 
         <div class="row">
 
@@ -703,9 +729,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 Saved Addresses
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -715,6 +743,7 @@ svg{
 
 
         <div class="line"></div>
+
 
 
         <!-- PROFILE -->
@@ -741,9 +770,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 Profile
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -753,6 +784,7 @@ svg{
 
 
         <div class="line"></div>
+
 
 
         <!-- REWARDS -->
@@ -797,9 +829,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 Rewards
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -807,14 +841,16 @@ svg{
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- ===============================
+
+<!-- =========================================
      OTHER INFORMATION
-================================ -->
+========================================= -->
 
 <section class="section">
 
@@ -853,9 +889,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 Suggest Products
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -865,6 +903,7 @@ svg{
 
 
         <div class="line"></div>
+
 
 
         <!-- NOTIFICATIONS -->
@@ -898,9 +937,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 Notifications
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -910,6 +951,7 @@ svg{
 
 
         <div class="line"></div>
+
 
 
         <!-- GENERAL INFO -->
@@ -930,9 +972,11 @@ svg{
 
             </div>
 
+
             <div class="row-title">
                 General Info
             </div>
+
 
             <svg class="arrow" viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6"/>
@@ -940,9 +984,11 @@ svg{
 
         </div>
 
+
     </div>
 
 </section>
+
 
 
 <!-- LOGOUT -->
@@ -950,6 +996,7 @@ svg{
 <div class="logout">
     Log Out
 </div>
+
 
 
 <!-- VERSION -->
