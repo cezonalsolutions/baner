@@ -5,10 +5,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>Profile</title>
+<title>Order Placed</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,1043 +24,779 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
 }
 
 html,
 body{
     width:100%;
-    min-height:100%;
+    height:100%;
 }
 
 body{
     font-family:"DM Sans", Arial, sans-serif;
-    color:#171719;
-
-    /* KINDA AREA KONCHEM WHITE TAGGINCHAM */
-    background:#f7f7f8;
+    background:#ffffff;
+    overflow:hidden;
 }
 
 
-/* =========================================
-   TOP PROFILE
-   PURE WHITE
-========================================= */
+/* =========================
+   SCREEN
+========================= */
 
-.top-fixed{
+.success-page{
     position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
+    inset:0;
 
     width:100%;
-    height:100px;
-
-    z-index:9999;
-
-    /* TOP MATRAM CLEAR WHITE */
-    background:#ffffff;
-}
-
-
-/* VERY LIGHT LINE */
-
-.top-fixed::after{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:1px;
-
-    background:#ededee;
-}
-
-
-/* =========================================
-   SAFE AREA
-========================================= */
-
-.safe-area{
-    width:100%;
-    height:35px;
-
-    background:#ffffff;
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.header{
-    width:100%;
-    height:64px;
-
-    display:flex;
-    align-items:center;
-
-    gap:13px;
-
-    padding:0 18px;
-
-    background:#ffffff;
-}
-
-
-/* BACK */
-
-.back{
-    width:40px;
-    height:40px;
-
-    flex:0 0 40px;
+    height:100%;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
     background:#ffffff;
-
-    border:1px solid #e6e6e8;
-    border-radius:50%;
 }
 
 
-.back svg{
-    width:21px;
-    height:21px;
-}
+/* =========================
+   CONTENT
+========================= */
 
-
-.header-title{
-    font-size:22px;
-    line-height:1;
-
-    font-weight:700;
-
-    letter-spacing:-0.4px;
-
-    color:#171719;
-}
-
-
-/* =========================================
-   PAGE
-   LIGHT OFF-WHITE
-========================================= */
-
-.page{
-    width:100%;
-    min-height:100vh;
-
-    padding:
-        125px
-        max(18px, env(safe-area-inset-right))
-        calc(35px + env(safe-area-inset-bottom))
-        max(18px, env(safe-area-inset-left));
-
-    background:#f7f7f8;
-}
-
-
-/* =========================================
-   USER
-========================================= */
-
-.user{
-    width:100%;
-
-    display:flex;
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:27px;
-}
-
-
-.avatar{
-    width:66px;
-    height:66px;
-
-    flex:0 0 66px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#eee9fa;
-}
-
-
-.avatar svg{
-    width:37px;
-    height:37px;
-
-    stroke:#35313b;
-}
-
-
-.user-content{
-    min-width:0;
-}
-
-
-.name{
-    margin-bottom:6px;
-
-    font-size:22px;
-    line-height:1.15;
-
-    font-weight:700;
-
-    letter-spacing:-0.4px;
-
-    color:#171719;
-}
-
-
-.mobile{
-    font-size:15px;
-    line-height:1.3;
-
-    font-weight:500;
-
-    color:#4f5055;
-
-    text-decoration:none;
-}
-
-
-/* =========================================
-   TOP ACTIONS
-========================================= */
-
-.actions{
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,minmax(0,1fr));
-
-    gap:10px;
-
-    margin-bottom:36px;
-}
-
-
-.action{
-    width:100%;
-    height:106px;
-
+.success-content{
     display:flex;
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
 
-    gap:10px;
-
-    padding:12px 6px;
-
-    /* CARDS WHITE */
-    background:#ffffff;
-
-    border:1px solid #e5e5e7;
-    border-radius:18px;
+    /* BOTH CIRCLE + TEXT PUSHED UP */
+    transform:translateY(-38px);
 }
 
 
-.action svg{
-    width:29px;
-    height:29px;
-}
+/* =========================
+   ANIMATION AREA
+========================= */
 
+.success-animation{
+    position:relative;
 
-.action-text{
-    width:100%;
-
-    text-align:center;
-
-    font-size:14px;
-    line-height:18px;
-
-    font-weight:600;
-
-    color:#202024;
-}
-
-
-.action-text span{
-    display:block;
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-.section{
-    width:100%;
-
-    margin-bottom:31px;
-}
-
-
-.section-title{
-    margin-bottom:14px;
-
-    font-size:19px;
-    line-height:1.2;
-
-    font-weight:700;
-
-    letter-spacing:-0.3px;
-
-    color:#18181a;
-}
-
-
-/* =========================================
-   LIST BOX
-========================================= */
-
-.list{
-    width:100%;
-
-    overflow:hidden;
-
-    /* BOX WHITE */
-    background:#ffffff;
-
-    border:1px solid #e4e4e6;
-
-    border-radius:17px;
-}
-
-
-/* =========================================
-   ROW
-========================================= */
-
-.row{
-    width:100%;
-
-    min-height:72px;
+    width:260px;
+    height:220px;
 
     display:flex;
     align-items:center;
-
-    padding:0 17px;
-
-    background:#ffffff;
+    justify-content:center;
 }
 
 
-.row-icon{
-    width:45px;
+/* =========================
+   GREEN CIRCLE
+========================= */
 
-    flex:0 0 45px;
+.success-circle{
+    position:relative;
+    z-index:10;
+
+    width:124px;
+    height:124px;
 
     display:flex;
     align-items:center;
-    justify-content:flex-start;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+    animation:circlePop 4s
+        cubic-bezier(.22,.9,.32,1.15)
+        infinite;
 }
 
 
-.row-icon svg{
-    width:27px;
-    height:27px;
-}
+/* =========================
+   CLEAN TICK
+========================= */
 
+.tick-svg{
+    width:70px;
+    height:70px;
 
-.row-title{
-    flex:1;
-
-    min-width:0;
-
-    font-size:15.5px;
-
-    font-weight:600;
-
-    color:#252529;
-}
-
-
-.arrow{
-    width:19px;
-    height:19px;
-
-    margin-left:10px;
-
-    stroke:#77787d;
-}
-
-
-/* =========================================
-   SHORT LINE
-   SAME GAP BOTH SIDES
-========================================= */
-
-.line{
-    width:calc(100% - 40px);
-    height:1px;
-
-    margin:0 auto;
-
-    background:#ececee;
-}
-
-
-/* =========================================
-   SVG
-========================================= */
-
-svg{
     display:block;
+    fill:none;
+}
 
+.tick-path{
     fill:none;
 
-    stroke:#2e2e32;
-
-    stroke-width:1.7;
+    stroke:#ffffff;
+    stroke-width:5.5;
 
     stroke-linecap:round;
     stroke-linejoin:round;
+
+    stroke-dasharray:100;
+    stroke-dashoffset:100;
+
+    animation:tickDraw 4s ease infinite;
 }
 
 
-/* =========================================
-   LOGOUT
-========================================= */
+/* =========================
+   BURST RINGS
+========================= */
 
-.logout{
-    width:100%;
-    height:57px;
+.ring{
+    position:absolute;
 
-    margin-top:7px;
+    left:50%;
+    top:50%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    width:124px;
+    height:124px;
 
-    background:#ffffff;
+    border:2px solid rgba(22,163,74,.23);
+    border-radius:50%;
 
-    border:1px solid #e3e3e5;
-    border-radius:16px;
+    opacity:0;
 
-    color:#202024;
+    animation:ringBurst 4s ease-out infinite;
+}
 
-    font-size:15.5px;
+.ring-two{
+    border-color:rgba(22,163,74,.11);
+    animation-delay:.08s;
+}
+
+
+/* =========================
+   REAL 5 POINT STARS
+========================= */
+
+.star{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:16px;
+    height:16px;
+
+    z-index:5;
+
+    opacity:0;
+
+    background:#f5b82e;
+
+    clip-path:polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 94%,
+        50% 72%,
+        21% 94%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+
+    animation:starBurst 4s ease-out infinite;
+}
+
+
+/* =========================
+   STARS AROUND CIRCLE
+========================= */
+
+.s1{
+    --x:0px;
+    --y:-104px;
+
+    width:19px;
+    height:19px;
+}
+
+.s2{
+    --x:70px;
+    --y:-78px;
+
+    width:13px;
+    height:13px;
+
+    animation-delay:.03s;
+}
+
+.s3{
+    --x:104px;
+    --y:-34px;
+
+    width:17px;
+    height:17px;
+
+    animation-delay:.06s;
+}
+
+.s4{
+    --x:111px;
+    --y:15px;
+
+    width:12px;
+    height:12px;
+
+    animation-delay:.02s;
+}
+
+.s5{
+    --x:78px;
+    --y:73px;
+
+    width:18px;
+    height:18px;
+
+    animation-delay:.07s;
+}
+
+.s6{
+    --x:10px;
+    --y:104px;
+
+    width:12px;
+    height:12px;
+
+    animation-delay:.04s;
+}
+
+.s7{
+    --x:-72px;
+    --y:76px;
+
+    width:17px;
+    height:17px;
+
+    animation-delay:.08s;
+}
+
+.s8{
+    --x:-110px;
+    --y:16px;
+
+    width:13px;
+    height:13px;
+
+    animation-delay:.03s;
+}
+
+.s9{
+    --x:-103px;
+    --y:-39px;
+
+    width:17px;
+    height:17px;
+
+    animation-delay:.06s;
+}
+
+.s10{
+    --x:-68px;
+    --y:-82px;
+
+    width:12px;
+    height:12px;
+
+    animation-delay:.01s;
+}
+
+
+/* =========================
+   GREEN SMALL STARS
+========================= */
+
+.green-star{
+    background:#68bf7a;
+}
+
+.s11{
+    --x:42px;
+    --y:-101px;
+
+    width:10px;
+    height:10px;
+
+    animation-delay:.08s;
+}
+
+.s12{
+    --x:105px;
+    --y:48px;
+
+    width:10px;
+    height:10px;
+
+    animation-delay:.04s;
+}
+
+.s13{
+    --x:-35px;
+    --y:104px;
+
+    width:10px;
+    height:10px;
+
+    animation-delay:.09s;
+}
+
+.s14{
+    --x:-108px;
+    --y:-5px;
+
+    width:9px;
+    height:9px;
+
+    animation-delay:.05s;
+}
+
+.s15{
+    --x:-37px;
+    --y:-103px;
+
+    width:9px;
+    height:9px;
+
+    animation-delay:.02s;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.dot{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#f1c65b;
+
+    opacity:0;
+
+    animation:dotBurst 4s ease-out infinite;
+}
+
+.d1{
+    --x:90px;
+    --y:-65px;
+}
+
+.d2{
+    --x:108px;
+    --y:67px;
+
+    background:#72c585;
+}
+
+.d3{
+    --x:43px;
+    --y:108px;
+}
+
+.d4{
+    --x:-91px;
+    --y:68px;
+
+    background:#72c585;
+}
+
+.d5{
+    --x:-110px;
+    --y:-60px;
+}
+
+.d6{
+    --x:31px;
+    --y:-110px;
+
+    background:#72c585;
+}
+
+
+/* =========================
+   ORDER TEXT
+========================= */
+
+.order-text{
+    margin-top:-17px;
+
+    font-size:30px;
+    line-height:1.1;
+
     font-weight:700;
+
+    letter-spacing:-0.7px;
+
+    color:#18181b;
+
+    animation:textShow 4s ease infinite;
 }
 
 
-/* =========================================
-   VERSION
-========================================= */
+/* =========================
+   CIRCLE POP
+========================= */
 
-.version{
-    width:100%;
+@keyframes circlePop{
 
-    padding-top:24px;
+    0%{
+        opacity:0;
+        transform:scale(.30);
+    }
 
-    text-align:center;
+    8%{
+        opacity:1;
+        transform:scale(1.13);
+    }
+
+    13%{
+        transform:scale(.96);
+    }
+
+    18%{
+        transform:scale(1);
+    }
+
+    86%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    93%{
+        opacity:0;
+        transform:scale(.88);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(.30);
+    }
 }
 
 
-.version-label{
-    margin-bottom:5px;
+/* =========================
+   TICK DRAW
+========================= */
 
-    font-size:12.5px;
+@keyframes tickDraw{
 
-    font-weight:500;
+    0%,
+    9%{
+        opacity:0;
+        stroke-dashoffset:100;
+    }
 
-    color:#96969b;
+    12%{
+        opacity:1;
+    }
+
+    23%{
+        opacity:1;
+        stroke-dashoffset:0;
+    }
+
+    86%{
+        opacity:1;
+        stroke-dashoffset:0;
+    }
+
+    93%,
+    100%{
+        opacity:0;
+        stroke-dashoffset:0;
+    }
 }
 
 
-.version-number{
-    font-size:13px;
+/* =========================
+   RING BURST
+========================= */
 
-    font-weight:600;
+@keyframes ringBurst{
 
-    color:#77787d;
+    0%,
+    9%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.7);
+    }
+
+    13%{
+        opacity:.7;
+    }
+
+    33%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.95);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.95);
+    }
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* =========================
+   STAR BURST
+========================= */
 
-@media(max-width:360px){
+@keyframes starBurst{
 
-    .header{
-        padding-left:14px;
-        padding-right:14px;
+    0%,
+    10%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translate(0,0)
+            scale(0)
+            rotate(0deg);
     }
 
-    .page{
-        padding-left:14px;
-        padding-right:14px;
+    15%{
+        opacity:1;
     }
 
-    .actions{
-        gap:8px;
+    22%{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            translate(
+                calc(var(--x) * .62),
+                calc(var(--y) * .62)
+            )
+            scale(1.25)
+            rotate(20deg);
     }
 
-    .action{
-        height:103px;
+    31%{
+        opacity:1;
 
-        border-radius:16px;
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1)
+            rotate(55deg);
     }
 
-    .action-text{
-        font-size:13px;
+    40%{
+        opacity:.6;
 
-        line-height:17px;
+        transform:
+            translate(-50%,-50%)
+            translate(
+                calc(var(--x) * 1.08),
+                calc(var(--y) * 1.08)
+            )
+            scale(.7)
+            rotate(80deg);
     }
 
+    47%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translate(
+                calc(var(--x) * 1.12),
+                calc(var(--y) * 1.12)
+            )
+            scale(.25)
+            rotate(100deg);
+    }
+
+    100%{
+        opacity:0;
+    }
 }
 
 
-/* =========================================
-   TABLET / DESKTOP
-========================================= */
+/* =========================
+   DOT BURST
+========================= */
 
-@media(min-width:768px){
+@keyframes dotBurst{
 
-    .header{
-        padding-left:30px;
-        padding-right:30px;
+    0%,
+    12%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(0);
     }
 
-    .page{
-        padding-left:30px;
-        padding-right:30px;
+    18%{
+        opacity:1;
     }
 
-    .actions{
-        gap:14px;
+    30%{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1);
     }
 
+    43%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translate(
+                calc(var(--x) * 1.08),
+                calc(var(--y) * 1.08)
+            )
+            scale(.25);
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+@keyframes textShow{
+
+    0%,
+    17%{
+        opacity:0;
+
+        transform:
+            translateY(9px)
+            scale(.97);
+    }
+
+    26%{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    86%{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    93%,
+    100%{
+        opacity:0;
+
+        transform:
+            translateY(4px)
+            scale(.98);
+    }
 }
 
 </style>
 </head>
 
-
 <body>
 
+<div class="success-page">
 
-<!-- =========================================
-     TOP PROFILE
-========================================= -->
+    <div class="success-content">
 
-<div class="top-fixed">
+        <div class="success-animation">
 
-    <div class="safe-area"></div>
+            <!-- BURST RINGS -->
 
-    <header class="header">
+            <div class="ring"></div>
+            <div class="ring ring-two"></div>
 
-        <div class="back">
 
-            <svg viewBox="0 0 24 24">
-                <path d="M15 18l-6-6 6-6"/>
-            </svg>
+            <!-- YELLOW STARS -->
 
-        </div>
+            <span class="star s1"></span>
+            <span class="star s2"></span>
+            <span class="star s3"></span>
+            <span class="star s4"></span>
+            <span class="star s5"></span>
+            <span class="star s6"></span>
+            <span class="star s7"></span>
+            <span class="star s8"></span>
+            <span class="star s9"></span>
+            <span class="star s10"></span>
 
 
-        <div class="header-title">
-            Profile
-        </div>
+            <!-- GREEN STARS -->
 
-    </header>
+            <span class="star green-star s11"></span>
+            <span class="star green-star s12"></span>
+            <span class="star green-star s13"></span>
+            <span class="star green-star s14"></span>
+            <span class="star green-star s15"></span>
 
-</div>
 
+            <!-- DOTS -->
 
+            <span class="dot d1"></span>
+            <span class="dot d2"></span>
+            <span class="dot d3"></span>
+            <span class="dot d4"></span>
+            <span class="dot d5"></span>
+            <span class="dot d6"></span>
 
-<!-- =========================================
-     PAGE
-========================================= -->
 
-<main class="page">
+            <!-- SUCCESS CIRCLE -->
 
+            <div class="success-circle">
 
-<!-- USER -->
-
-<section class="user">
-
-    <div class="avatar">
-
-        <svg viewBox="0 0 24 24">
-
-            <circle cx="12" cy="8" r="3.6"/>
-
-            <path d="
-                M5.5 20
-                C6.2 15.9 8.5 14 12 14
-                C15.5 14 17.8 15.9 18.5 20
-            "/>
-
-        </svg>
-
-    </div>
-
-
-    <div class="user-content">
-
-        <div class="name">
-            Ram
-        </div>
-
-        <div class="mobile">
-            +91 93477 68947
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     TOP 3 CARDS
-========================================= -->
-
-<section class="actions">
-
-
-    <!-- YOUR ORDERS -->
-
-    <div class="action">
-
-        <svg viewBox="0 0 24 24">
-
-            <path d="M5 8.5h14l1 11.5H4L5 8.5z"/>
-
-            <path d="
-                M8.5 9V6.8
-                C8.5 4.7 9.9 3.5 12 3.5
-                C14.1 3.5 15.5 4.7 15.5 6.8V9
-            "/>
-
-        </svg>
-
-
-        <div class="action-text">
-            <span>Your</span>
-            <span>Orders</span>
-        </div>
-
-    </div>
-
-
-
-    <!-- HELP SUPPORT -->
-
-    <div class="action">
-
-        <svg viewBox="0 0 24 24">
-
-            <path d="
-                M20 11.5
-                C20 15.6 16.4 19 12 19
-                C10.8 19 9.7 18.8 8.7 18.3
-                L4 20
-                L5.4 15.9
-                C4.5 14.6 4 13.1 4 11.5
-                C4 7.4 7.6 4 12 4
-                C16.4 4 20 7.4 20 11.5z
-            "/>
-
-            <path d="M8.5 11.5h.01"/>
-            <path d="M12 11.5h.01"/>
-            <path d="M15.5 11.5h.01"/>
-
-        </svg>
-
-
-        <div class="action-text">
-            <span>Help &amp;</span>
-            <span>Support</span>
-        </div>
-
-    </div>
-
-
-
-    <!-- YOUR COUPONS -->
-
-    <!-- YOUR COUPONS -->
-
-<div class="action">
-
-    <svg viewBox="0 0 24 24">
-
-        <!-- COUPON / TAG SHAPE -->
-        <path d="
-            M4.5 6.5
-            C4.5 5.7 5.2 5 6 5
-            H18
-            C18.8 5 19.5 5.7 19.5 6.5
-            V9
-            C18.1 9.2 17.2 10.4 17.2 12
-            C17.2 13.6 18.1 14.8 19.5 15
-            V17.5
-            C19.5 18.3 18.8 19 18 19
-            H6
-            C5.2 19 4.5 18.3 4.5 17.5
-            V15
-            C5.9 14.8 6.8 13.6 6.8 12
-            C6.8 10.4 5.9 9.2 4.5 9
-            Z
-        "/>
-
-        <!-- % SYMBOL -->
-        <circle cx="10" cy="9.5" r="1.1"/>
-        <circle cx="14" cy="14.5" r="1.1"/>
-
-        <path d="M9.5 15L14.5 9"/>
-
-    </svg>
-
-
-    <div class="action-text">
-        <span>Your</span>
-        <span>Coupons</span>
-    </div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- =========================================
-     YOUR INFORMATION
-========================================= -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        Your Information
-    </h2>
-
-
-    <div class="list">
-
-
-        <!-- SAVED ADDRESS -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <path d="
-                        M12 21
-                        C12 21 18 15.3 18 9.8
-                        C18 6.5 15.3 4 12 4
-                        C8.7 4 6 6.5 6 9.8
-                        C6 15.3 12 21 12 21z
-                    "/>
-
-                    <circle cx="12" cy="9.8" r="2.1"/>
-
-                </svg>
-
-            </div>
-
-
-            <div class="row-title">
-                Saved Addresses
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
-        </div>
-
-
-        <div class="line"></div>
-
-
-
-        <!-- PROFILE -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <circle cx="12" cy="12" r="9"/>
-
-                    <circle cx="12" cy="9" r="3"/>
-
-                    <path d="
-                        M6.8 18
-                        C7.7 15.4 9.4 14 12 14
-                        C14.6 14 16.3 15.4 17.2 18
-                    "/>
-
-                </svg>
-
-            </div>
-
-
-            <div class="row-title">
-                Profile
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
-        </div>
-
-
-        <div class="line"></div>
-
-
-
-        <!-- REWARDS -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <rect
-                        x="4"
-                        y="9"
-                        width="16"
-                        height="11"
-                        rx="1.5"
+                <svg
+                    class="tick-svg"
+                    viewBox="0 0 72 72"
+                >
+                    <path
+                        class="tick-path"
+                        d="M17 37 L29 48 L55 22"
                     />
-
-                    <path d="M3 9h18V6H3v3"/>
-
-                    <path d="M12 6v14"/>
-
-                    <path d="
-                        M12 6
-                        C9.2 6 7.2 5.3 7.2 3.8
-                        C7.2 2.8 8 2.2 9 2.2
-                        C10.7 2.2 12 4 12 6z
-                    "/>
-
-                    <path d="
-                        M12 6
-                        C14.8 6 16.8 5.3 16.8 3.8
-                        C16.8 2.8 16 2.2 15 2.2
-                        C13.3 2.2 12 4 12 6z
-                    "/>
-
                 </svg>
 
             </div>
 
-
-            <div class="row-title">
-                Rewards
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
         </div>
 
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     OTHER INFORMATION
-========================================= -->
-
-<section class="section">
-
-    <h2 class="section-title">
-        Other Information
-    </h2>
-
-
-    <div class="list">
-
-
-        <!-- SUGGEST PRODUCTS -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <path d="
-                        M12 3
-                        L14.4 8
-                        L20 8.8
-                        L16 12.7
-                        L17 18.2
-                        L12 15.6
-                        L7 18.2
-                        L8 12.7
-                        L4 8.8
-                        L9.6 8z
-                    "/>
-
-                </svg>
-
-            </div>
-
-
-            <div class="row-title">
-                Suggest Products
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
+        <div class="order-text">
+            Order Placed
         </div>
 
-
-        <div class="line"></div>
-
-
-
-        <!-- NOTIFICATIONS -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <path d="
-                        M6 17h12
-                        L16.5 15
-                        V10.5
-                        C16.5 7.7 14.7 6 12 6
-                        C9.3 6 7.5 7.7 7.5 10.5
-                        V15L6 17z
-                    "/>
-
-                    <path d="
-                        M10 19
-                        C10.4 20.2 11 20.7 12 20.7
-                        C13 20.7 13.6 20.2 14 19
-                    "/>
-
-                </svg>
-
-            </div>
-
-
-            <div class="row-title">
-                Notifications
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
-        </div>
-
-
-        <div class="line"></div>
-
-
-
-        <!-- GENERAL INFO -->
-
-        <div class="row">
-
-            <div class="row-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <circle cx="12" cy="12" r="9"/>
-
-                    <path d="M12 11v6"/>
-
-                    <path d="M12 7.5h.01"/>
-
-                </svg>
-
-            </div>
-
-
-            <div class="row-title">
-                General Info
-            </div>
-
-
-            <svg class="arrow" viewBox="0 0 24 24">
-                <path d="M9 6l6 6-6 6"/>
-            </svg>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     LOGOUT
-========================================= -->
-
-<div class="logout">
-    Log Out
-</div>
-
-
-
-<!-- =========================================
-     VERSION
-========================================= -->
-
-<div class="version">
-
-    <div class="version-label">
-        App Version
-    </div>
-
-    <div class="version-number">
-        1.0.0
     </div>
 
 </div>
-
-
-</main>
 
 </body>
 </html>
